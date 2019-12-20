@@ -3,7 +3,7 @@ import productsJson from '../assets/products.json';
 
 class ProductsService {
 
-    findAll(): Product[] {
+    getAllProducts(): Product[] {
         var products = productsJson.map( productJson =>
             new Product(
                 +productJson.id,
@@ -18,8 +18,8 @@ class ProductsService {
         return products;
     }
 
-    find(id: number): Product {
-        var product = this.findAll().find(x => x.id === id);
+    getProductById(id: number): Product {
+        var product = this.getAllProducts().find(x => x.id === id);
 
         return product;
     }
