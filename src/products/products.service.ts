@@ -1,5 +1,5 @@
 import { Product } from './product';
-import productsJson from '../../assets/products.json';
+import productsJson from '../assets/products.json';
 
 class ProductsService {
 

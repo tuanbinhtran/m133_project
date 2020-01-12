@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 16px Helvetica, Arial;
+}
+
+
+#header {
+    /* width: 100vw; */
+    text-align: center;
+}
+
+#header h1 {
+    margin: 1rem;
+    color: black;
+    width: auto;
+    padding: 1rem;
+    font-size: 2em;
+    background: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+#header h1:Hover {
+    background: black;
+    color: white;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+textarea {
+    width: 500px;
+    height: 300px;
+}
+
+input[type=text],
+textarea {
+    border: 1px solid #eee;
+    border-top-color: #ddd;
+    border-left-color: #ddd;
+    border-radius: 2px;
+    padding: 15px;
+    font-size: .8em;
+}
+
+input[type=text] {
+    width: 500px;
+}
