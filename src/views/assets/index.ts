@@ -1,1 +1,1 @@
-console.log('worksss');
+console.log('index.ts');

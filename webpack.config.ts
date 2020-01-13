@@ -4,7 +4,8 @@ import path from 'path';
 const config: Configuration = {
     mode: "none",
     entry: {
-        index: './src/views/assets/index.ts'
+        index: './src/views/assets/index.ts',
+        home: './src/views/assets/home.ts',
     },
     module: {
         rules: [

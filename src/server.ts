@@ -1,5 +1,5 @@
 import express from 'express';
-import productsController from './products/products.controller';
+import routes from './api.routes';
 import nunjucks, { configure } from 'nunjucks';
 
 const app = express();
@@ -13,14 +13,18 @@ app.set('view engine', 'html');
 
 app.use('/assets', express.static(__dirname + '/views/assets'));
 
-app.use('/api/products', productsController);
+app.use(routes);
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('home');
 });
 
-app.get('/home', (req, res) => {
-    res.render('home');
+app.get('/product/:id', (req, res) => {
+    var productId = req.params.id;
+
+    res.render('product', { id: productId })
+
+
 });
 
 

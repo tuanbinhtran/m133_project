@@ -1,6 +1,5 @@
 
 import express from 'express';
-import { Response } from 'express';
 import productsService from './products.service';
 import sharedService from '../shared.service';
 
