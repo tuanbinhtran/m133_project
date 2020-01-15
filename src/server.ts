@@ -1,9 +1,10 @@
 import express from 'express';
-import routes from './api.routes';
+import routes from './routes';
 import nunjucks, { configure } from 'nunjucks';
 
 const app = express();
 
+// configure nunjucks and set view engine
 configure(__dirname + '/views', {
     autoescape: true,
     watch: true,
@@ -11,21 +12,14 @@ configure(__dirname + '/views', {
 });
 app.set('view engine', 'html');
 
-app.use('/assets', express.static(__dirname + '/views/assets'));
-
+// use routes
 app.use(routes);
 
-app.get('/', (req, res) => {
-    res.render('home');
-});
 
-app.get('/product/:id', (req, res) => {
-    var productId = req.params.id;
-
-    res.render('product', { id: productId })
-
-
-});
+// static paths
+app.use('/js', express.static(__dirname + '/views/assets'));
+app.use('/css', express.static(__dirname + '/views/css'));
+app.use('/assets', express.static(__dirname + '/assets'));
 
 
 app.listen(3000, () => {
