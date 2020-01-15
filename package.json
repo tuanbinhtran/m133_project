@@ -9,7 +9,7 @@
     "start": "npm run build && node ./dist/server",
     "build": "npm run build:server && npm run build:client",
     "build:server": "tsc",
-    "postbuild:server": "copyfiles -u 1 -e \"**/*.ts\" ./src/views/**/* ./dist",
+    "postbuild:server": "copyfiles -u 1 \"./src/views/*\" \"./src/views/css/*\" \"./src/assets/*.jpg\" \"./dist\"",
     "build:client": "webpack"
   },
   "keywords": [],
