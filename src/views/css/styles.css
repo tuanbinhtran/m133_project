@@ -19,13 +19,14 @@ body {
     width: auto;
     padding: 1rem;
     font-size: 2em;
-    background: white;
+    background-color: white;
     cursor: pointer;
     user-select: none;
+    transition: background-color .2s linear;
 }
 
 #header h1:Hover {
-    background: black;
+    background-color: black;
     color: white;
 }
 
@@ -50,4 +51,15 @@ textarea {
 
 input[type=text] {
     width: 500px;
+}
+
+
+.pure-g > div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.m-box {
+    margin: 1em;
 }

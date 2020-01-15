@@ -3,11 +3,13 @@ import { Product } from '../../products/product';
 
 console.log('home.ts')
 
-var productsElement = document.getElementById('products');
+var productsElement = document.getElementsByClassName('pure-g')[0];
 var template = nunjucks.compile(`
 {% for product in products %}
-    <img src="{{  product.imageName  }}" />
-    <p>{{ product.productName }}</p>
+    <div class="pure-u-1-2 pure-u-lg-1-3 m-box" >
+        <img class="pure-img" src="./assets/{{  product.imageName  }}" />
+        <p>{{ product.productName }}</p>
+    </div>
 {% endfor %}
 `);
 
