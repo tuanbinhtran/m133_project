@@ -1,14 +1,24 @@
 import { Product } from "../../products/product";
+import { getCartTotal } from ".";
 
 var cartContentElement = document.getElementById('cart-content');
 
 getCartContents();
 
 function submit() {
-    fetch('/api/cart/delete', {
-        method: 'DELETE',
-        credentials: 'same-origin',
-    });
+    var vorname = document.getElementById('vorname') as HTMLInputElement;
+    var nachname = document.getElementById('nachname') as HTMLInputElement;
+    var email = document.getElementById('email') as HTMLInputElement;
+
+    if (vorname.value != '' &&  nachname.value != '' && email.value != '') {
+        fetch('/api/cart/delete', {
+            method: 'DELETE',
+            credentials: 'same-origin',
+        });
+    }
+
+    getCartContents();
+    getCartTotal();
 }
 
 async function getCart() {
