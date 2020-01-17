@@ -11,7 +11,7 @@ function submit() {
     var email = document.getElementById('email') as HTMLInputElement;
 
     if (vorname.value != '' &&  nachname.value != '' && email.value != '') {
-        fetch('/api/cart/delete', {
+        fetch('/api/cart', {
             method: 'DELETE',
             credentials: 'same-origin',
         });
