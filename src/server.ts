@@ -5,6 +5,7 @@ import expressSession from 'express-session';
 
 const app = express();
 
+app.use(express.json());
 app.use(expressSession({
     secret: "super-safe-secret",
     resave: false,

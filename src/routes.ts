@@ -20,6 +20,8 @@ router.get('/', (req, res) => {
     }
 
     res.render('productDetail', { id: productId });
+}).get('/checkout', (req, res) => {
+    res.render('cart');
 });
 
 

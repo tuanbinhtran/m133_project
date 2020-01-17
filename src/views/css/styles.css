@@ -67,6 +67,7 @@ input[type=text] {
 
 .normalPriceTag {
     text-decoration: line-through;
+    color: red;
 }
 
 .offerPriceTag {
@@ -83,7 +84,15 @@ input[type=text] {
     flex-direction: column;
 }
 
-.product .thumbnail {
+.product .content {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.product .thumbnail, .product-detail .thumbnail {
     overflow: hidden;
     margin: 10px;
 }
@@ -106,4 +115,15 @@ input[type=text] {
     flex-direction: row;
 }
 
+.product-detail .content {
+    z-index: 999;
+}
+
+.product-detail .thumbnail img {
+    transition: transform .5s ease-in-out;
+}
+
+.product-detail .thumbnail:hover img {
+    transform: scale(1.1);
+}
 

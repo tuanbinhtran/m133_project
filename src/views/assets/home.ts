@@ -29,9 +29,9 @@ function renderProduct(product: Product) {
                     <img class="pure-img" src="./assets/${product.imageName}"/>
                 </div>
                 <div class="content">
-                    <p>${product.productName}</p>
-                    <p class="normalPriceTag">${product.normalPrice.toFixed(2)}</p>
-                    <p class="specialOfferTag">${product.specialOffer.toFixed(2)}</p>
+                    <p class="bold">${product.productName}</p>
+                    <p class="specialOfferTag">CHF ${product.specialOffer.toFixed(2)}</p>
+                    <p class="normalPriceTag">CHF ${product.normalPrice.toFixed(2)}</p>
                 </div>
             </div>
         </div>

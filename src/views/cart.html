@@ -1,0 +1,51 @@
+{% set scriptSrc = "/js/cart.js" %}
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="cart">
+    <div class="pure-grid">
+        <div class="pure-u-1">
+            <table class="pure-table pure-table-horizontal">
+                <thead>
+                    <tr>
+                        <th>Produkt</th>
+                        <th>Einzelpreis</th>
+                        <th>Anzahl</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+
+                <tbody id="cart-content">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="pure-u-1">
+            <form class="pure-form pure-form-aligned" onsubmit="submit()">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <label for="vorname">Vorname</label>
+                        <input id="vorname" type="text" placeholder="Vorname">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="nachname">Nachname</label>
+                        <input id="nachname" type="text" placeholder="Nachname">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="email">Email-Adresse</label>
+                        <input id="email" type="email" placeholder="Email-Adresse">
+                    </div>
+
+                    <div class="pure-controls">
+                        <button type="submit" class="pure-button pure-button-primary">Einkauf abschliessen</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

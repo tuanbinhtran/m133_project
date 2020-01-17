@@ -7,6 +7,7 @@ const config: Configuration = {
         index: './src/views/assets/index.ts',
         home: './src/views/assets/home.ts',
         productDetail: './src/views/assets/productDetail.ts',
+        cart: './src/views/assets/cart.ts',
     },
     module: {
         rules: [

@@ -7,21 +7,29 @@ import { Product } from '../products/product';
 const router = express.Router();
 
 router.get('/', (req, res) => {
+    if (req.session.cart == undefined) {
+        req.session.cart = <number[]>[];
+    }
+
     res.json(req.session.cart);
+});
+
+router.delete('/', (req, res) => {
+    req.session.cart = <number[]>[];
+
+    res.end(200);
 });
 
 router.post('/add', (req, res) => {
     var id = req.body.id;
-    console.log(id);
+    var cart = req.session.cart as number[];
 
-    var product = tryGetProduct(req.params.id, res);
+    var product = tryGetProduct(String(id), res);
 
     req.session.cart = <number[]>[
-        ...req.session.cart,
+        ...cart,
         product.id
     ];
-
-    console.log(req.session.cart);
 
     res.sendStatus(200);
 });
