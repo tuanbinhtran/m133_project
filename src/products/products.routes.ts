@@ -2,6 +2,7 @@
 import express from 'express';
 import productsService from './products.service';
 import sharedService from '../shared.service';
+import { Product } from './product';
 
 const router = express.Router();
 
@@ -13,7 +14,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     var id = req.params.id;
 
-    if (!isNumbersOnly(id)) {
+    if (!sharedService.isNumbersOnly(id)) {
         sharedService.badRequest(res);
     }
 
@@ -26,9 +27,5 @@ router.get('/:id', (req, res) => {
     res.status(200);
     res.send(product);
 });
-
-function isNumbersOnly(value: string): boolean {
-    return value.match(/^\d+$/g) ? true : false;
-}
 
 export default router;

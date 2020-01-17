@@ -16,7 +16,7 @@ var productsGridElement = document.getElementById('products-grid');
 // `);
 
 
-fetch('api/products')
+fetch('/api/products')
     .then((products) => products.json())
     .then((products: Product[]) => { products.forEach(renderProduct) });
 
@@ -24,7 +24,7 @@ function renderProduct(product: Product) {
     productsGridElement.innerHTML +=
         `
         <div class="pure-u-1-2 pure-u-lg-1-3 m-box" >
-            <div class="product">
+            <div id="${product.id}"  class="product">
                 <div class="thumbnail">
                     <img class="pure-img" src="./assets/${product.imageName}"/>
                 </div>
@@ -36,5 +36,34 @@ function renderProduct(product: Product) {
             </div>
         </div>
         `
+
+    var productsElement = document.getElementsByClassName('product');
+
+    for (let i = 0; i < productsElement.length; i++) {
+        const element = productsElement[i];
+        const productId = element.id;
+
+        element.addEventListener('click', (e) => {
+            openDetail(+productId);
+        });
+    }
+}
+
+async function openDetail(id: number) {
+    window.location.href = '/product/' + id;
+}
+
+async function addProductToCart(id: number) {
+    const response = await fetch('/cart/add', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(id)
+    });
+
+    var res = await response;
+
+    console.log(res);
 }
 

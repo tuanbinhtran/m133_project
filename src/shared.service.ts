@@ -7,10 +7,15 @@ class SharedService {
 		res.send('Bad request');
 	}
 
-	
+
 	public notFound(res: Response): void {
 		res.status(404);
 		res.send('Not Found');
+	}
+
+
+	public  isNumbersOnly(value: string): boolean {
+		return value.match(/^\d+$/g) ? true : false;
 	}
 }
 

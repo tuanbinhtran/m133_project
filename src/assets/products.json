@@ -78,5 +78,13 @@
         "normalPrice": 17.95,
         "imageName": "olivenoel.jpg",
         "description": "Bertolli Olivenöl extra vergine originale"
+    },
+    {
+        "id": "011",
+        "productName": "Pepsi",
+        "specialOffer": 5.5,
+        "normalPrice": 11,
+        "imageName": "pepsi.jpg",
+        "description": "Pepsi und Schwip Schwap im 6er-Pack, 6 x 1.5 Liter"
     }
 ]

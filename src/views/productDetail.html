@@ -1,0 +1,11 @@
+{% set scriptSrc = "/js/productDetail.js" %}
+{% extends 'index.html' %}
+
+{% block content %}
+    <div id="{{ id }}" class="product-detail"></div>
+    {{ id }}
+    <a id="addToCart" class="pure-button" href="#">
+        <i class="fa fa-shopping-cart fa-lg"></i>
+        Add to cart
+    </a>
+{% endblock %}

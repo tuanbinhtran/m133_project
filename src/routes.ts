@@ -1,10 +1,12 @@
 import express from 'express';
 import productsRoutes from './products/products.routes';
+import cartRoutes from './cart/cart.routes';
 
 var router = express.Router();
 
 // api routes
 router.use('/api/products', productsRoutes);
+router.use('/api/cart', cartRoutes)
 
 
 // page routes
@@ -17,7 +19,7 @@ router.get('/', (req, res) => {
         res.json('Invalid product id');
     }
 
-    res.render('product', { id: productId });
+    res.render('productDetail', { id: productId });
 });
 
 
